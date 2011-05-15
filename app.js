@@ -31,12 +31,6 @@ var socket = io.listen(app);
 socket.on('connection', function(client) {
     client.on('message', function(data) {
       client.broadcast(data);
-//      var reply = {
-//        name: 'munode',
-//        input: munode.talk(msg.input)
-//      };
-//      client.send(reply);
-//      client.broadcast(reply);
     });
 });
 
