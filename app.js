@@ -29,14 +29,14 @@ app.configure('production', function(){
 // socket.io
 var socket = io.listen(app);
 socket.on('connection', function(client) {
-    client.on('message', function(msg) {
-      client.broadcast(msg);
-      var reply = {
-        name: 'munode',
-        input: munode.talk(msg.input)
-      };
-      client.send(reply);
-      client.broadcast(reply);
+    client.on('message', function(data) {
+      client.broadcast(data);
+//      var reply = {
+//        name: 'munode',
+//        input: munode.talk(msg.input)
+//      };
+//      client.send(reply);
+//      client.broadcast(reply);
     });
 });
 
@@ -44,7 +44,7 @@ socket.on('connection', function(client) {
 // Routes
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'Express'
+    title: 'SocketSketch'
   });
 });
 
