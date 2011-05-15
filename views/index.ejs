@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sketch</title>
+        <meta charset="urt-8"/>
+        <script type="text/javascript" src="js/sketch.js"></script>
+        <style type="text/css">
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            #tools {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-weight: bold;
+                width: 100%;
+                height: 50px;
+                line-height: 1;
+                margin: 0;
+                padding: 0;
+                background: rgba(0,0,0,0.7);
+                background: -webkit-gradient(
+                linear,
+                left top, left bottom,
+                #888, #666
+                );
+                background: -moz-linear-gradient(top, #888, #666);
+                color: #fff;
+                text-shadow: -1px 0 2px rgba(0,0,0,0.3);
+                box-shadow: 0 0 1px rgba(0,0,0,0.5);
+            }
+
+            #colors {
+                display: inline-block;
+                padding: 10px;
+            }
+
+            #colors .color {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+                margin: 5px 5px;
+                cursor: pointer;
+                border-radius: 5px;
+                box-shadow: inset 0 0 2px rgba(0,0,0.5);
+            }
+
+        </style>
+        <body>
+<p>Welcome to <%= title %></p>
+            <canvas id="canvas" width="800" height="600"></canvas>
+            <div id="tools">
+                <div id="colors">
+                    <div class="color" style="background:#FFFFFF"></div>
+                    <div class="color" style="background:#DCDDDD"></div>
+                    <div class="color" style="background:#9ea1a3"></div>
+                    <div class="color" style="background:#2B2B2B"></div>
+                    <div class="color" style="background:#D9333F"></div>
+                    <div class="color" style="background:#762f07"></div>
+                    <div class="color" style="background:#F5B199"></div>
+                    <div class="color" style="background:#FFDB4F"></div>
+                    <div class="color" style="background:#7EBEAB"></div>
+                    <div class="color" style="background:#2F5D50"></div>
+                    <div class="color" style="background:#89C3EB"></div>
+                    <div class="color" style="background:#706CAA"></div>
+                </div>
+            </div>
+        </body>
+    </head>
+</html>
