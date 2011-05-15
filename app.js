@@ -1,9 +1,9 @@
-
 /**
  * Module dependencies.
  */
 
 var express = require('express');
+io = require('socket.io');
 
 var app = module.exports = express.createServer();
 
@@ -26,8 +26,22 @@ app.configure('production', function(){
   app.use(express.errorHandler()); 
 });
 
-// Routes
+// socket.io
+var socket = io.listen(app);
+socket.on('connection', function(client) {
+    client.on('message', function(msg) {
+      client.broadcast(msg);
+      var reply = {
+        name: 'munode',
+        input: munode.talk(msg.input)
+      };
+      client.send(reply);
+      client.broadcast(reply);
+    });
+});
 
+
+// Routes
 app.get('/', function(req, res){
   res.render('index', {
     title: 'Express'
