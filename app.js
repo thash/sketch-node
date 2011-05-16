@@ -38,6 +38,7 @@ socket.on('connection', function(client) {
 
 // Routes
 app.get('/', function(req, res){
+  console.log(req);
   res.render('index', {
     title: 'SocketSketch'
   });
