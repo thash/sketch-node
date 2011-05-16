@@ -2,6 +2,7 @@
  * Module dependencies.
  */
 
+var PORT = 3030;
 var express = require('express');
 io = require('socket.io');
 
@@ -45,6 +46,6 @@ app.get('/', function(req, res){
 // Only listen on $ node app.js
 
 if (!module.parent) {
-  app.listen(3000);
+  app.listen(PORT);
   console.log("Express server listening on port %d", app.address().port);
 }
